@@ -7,7 +7,7 @@ from profiles.api.views import (ProfileViewSet, ProfileStatusViewSet, AvatarUpda
 
 router = DefaultRouter()
 router.register(r"profiles", ProfileViewSet)
-router.register(f"status", ProfileStatusViewSet)
+router.register(f"status", ProfileStatusViewSet, basename = "status")
 
 urlpatterns = [
     # path("profiles/", profile_list, name='profile-list'),
