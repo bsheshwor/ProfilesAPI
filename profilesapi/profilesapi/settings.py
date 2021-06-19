@@ -37,10 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'rest_framework',
     'rest_framework.authtoken',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     'rest_auth',
+    'rest_auth.registration',
+
     'profiles'
 ]
 
@@ -129,10 +137,15 @@ MEDIA_ROOT = 'uploads'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_VERIFICATOIN = "none"
+ACCOUNT_EMAIL_REQUIRED = (True)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
